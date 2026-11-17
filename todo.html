@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>투두리스트</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card wide">
+    <div class="header">
+      <div>
+        <h1>투두리스트</h1>
+        <p class="sub" id="welcome" style="margin-bottom:0"></p>
+      </div>
+      <button class="btn-logout" id="logoutBtn">로그아웃</button>
+    </div>
+
+    <!-- 캘린더 -->
+    <div class="calendar">
+      <div class="cal-header">
+        <button id="prevMonth" class="cal-nav">&lt;</button>
+        <h2 id="monthLabel"></h2>
+        <button id="nextMonth" class="cal-nav">&gt;</button>
+        <button id="todayBtn" class="cal-today">오늘</button>
+      </div>
+      <div class="cal-grid cal-weekdays">
+        <div class="sun">일</div><div>월</div><div>화</div><div>수</div><div>목</div><div>금</div><div class="sat">토</div>
+      </div>
+      <div class="cal-grid" id="calDays"></div>
+    </div>
+
+    <!-- 일정 추가 -->
+    <form class="add-form" id="addForm">
+      <div class="field grow">
+        <label for="todoInput">할 일</label>
+        <input type="text" id="todoInput" placeholder="일정 / 할 일을 입력하세요" />
+      </div>
+      <div class="field">
+        <label for="startInput">시작일</label>
+        <input type="date" id="startInput" />
+      </div>
+      <div class="field">
+        <label for="endInput">마감일 (언제까지)</label>
+        <input type="date" id="endInput" />
+      </div>
+      <button type="submit" class="add-btn">추가</button>
+    </form>
+    <p class="msg" id="formMsg"></p>
+
+    <div class="list-title">
+      <span id="listTitle">전체 일정</span>
+      <button id="clearDateBtn" class="link-btn" style="display:none">전체 보기</button>
+    </div>
+
+    <div class="filters">
+      <button data-filter="all" class="active">전체</button>
+      <button data-filter="active">진행중</button>
+      <button data-filter="done">완료</button>
+    </div>
+
+    <ul id="todoList"></ul>
+
+    <div class="footer">
+      <span id="count"></span>
+      <button id="clearDoneBtn">완료 항목 삭제</button>
+    </div>
+  </div>
+
+  <script src="todo.js"></script>
+</body>
+</html>
